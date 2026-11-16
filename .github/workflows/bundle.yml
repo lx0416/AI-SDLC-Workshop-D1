@@ -30,7 +30,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Audit production dependencies
-        run: npm audit --prefix frontend --omit=dev --audit-level=critical
+        run: npm audit --prefix frontend --omit=dev --audit-level=high
 
       - name: Build and publish bundle branch
         run: node scripts/build-bundle.mjs --push

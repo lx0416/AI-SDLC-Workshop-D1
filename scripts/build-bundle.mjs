@@ -78,14 +78,26 @@ writeFileSync(
 
 git(["add", "-A"], bundle);
 if (stagedChanges(bundle)) {
-  git(["commit", "-m", "Build generated Snip bundle"], bundle);
+  git([
+    "commit",
+    "-m",
+    "Build generated Snip bundle",
+    "-m",
+    "Co-authored-by: OpenBot <335604065+openbotgit[bot]@users.noreply.github.com>",
+  ], bundle);
 } else {
   console.log("bundle unchanged");
 }
 
 git(["add", "backend", "frontend", "cli", "bundle"]);
 if (stagedChanges(root)) {
-  git(["commit", "-m", "Update generated bundle and source submodules"]);
+  git([
+    "commit",
+    "-m",
+    "Update generated bundle and source submodules",
+    "-m",
+    "Co-authored-by: OpenBot <335604065+openbotgit[bot]@users.noreply.github.com>",
+  ]);
 } else {
   console.log("main submodule pointers unchanged");
 }
