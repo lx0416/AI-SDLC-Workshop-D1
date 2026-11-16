@@ -19,7 +19,7 @@ Each component has its own orphan branch and is mounted here as a submodule:
 Clone with submodules initialized:
 
 ```sh
-git clone --recurse-submodules https://github.com/lx0416/AI-SDLC-Workshop-D1.git
+git clone --branch main --recurse-submodules https://github.com/lx0416/AI-SDLC-Workshop-D1.git
 ```
 
 For an existing plain clone, run `git submodule update --init --recursive`.
@@ -64,3 +64,11 @@ git add backend && git commit -m "Bump backend submodule" && git push
 Repeat for `frontend` or `cli`. Generate releases with
 `node scripts/build-bundle.mjs`; add `--push` to publish the bundle and the
 updated `main` pointer.
+
+## Release automation
+
+The hourly `Build bundle` workflow refreshes the generated `bundle` branch; it
+can also be run manually. The `Build and push image` workflow runs when the
+`bundle` submodule pointer changes on `main` (or when that workflow file
+changes), scans the candidate image, and publishes
+`ghcr.io/lx0416/AI-SDLC-Workshop-D1:latest` and a short-SHA tag to GHCR.
