@@ -10,3 +10,7 @@
 	path = cli
 	url = https://github.com/lx0416/AI-SDLC-Workshop-D1.git
 	branch = cli
+[submodule "bundle"]
+	path = bundle
+	url = https://github.com/lx0416/AI-SDLC-Workshop-D1.git
+	branch = bundle
