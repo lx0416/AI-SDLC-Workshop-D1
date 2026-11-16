@@ -1,4 +1,3 @@
 # Generated Snip bundle
 
-This branch contains generated release output. Do not edit it by hand; rebuild
-it from the source submodules with `node scripts/build-bundle.mjs` on `main`.
+This branch contains generated release output. Do not edit it by hand; rebuild it from `main` with `node scripts/build-bundle.mjs`.
